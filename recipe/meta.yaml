@@ -1,18 +1,18 @@
 {% set name = "python-ldap" %}
-{% set version = "3.2.0" %}
+{% set version = "3.3.0" %}
 
 package:
-  name: "{{ name|lower }}"
-  version: "{{ version }}"
+  name: {{ name|lower }}
+  version: {{ version }}
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 7d1c4b15375a533564aad3d3deade789221e450052b21ebb9720fb822eccdb8e
+  sha256: de04939485b53ee5d9a6855562d415b73060c52e681644386de4d5bd18e3f540
 
 build:
-  number: 1
-  skip: True  # [win]
-  script: "{{ PYTHON }} -m pip install . --no-deps --ignore-installed -vvv "
+  number: 0
+  skip: true  # [win]
+  script: '{{ PYTHON }} -m pip install . --no-deps --ignore-installed -vvv '
 
 requirements:
   build:
