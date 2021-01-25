@@ -30,12 +30,15 @@ requirements:
     - openldap
 
 test:
+  requires:
+    - pip
   imports:
     - ldap
     - ldap.controls
     - ldap.extop
     - ldap.schema
-    # - slapdtest
+  commands:
+    - pip check
 
 about:
   home: https://www.python-ldap.org/
