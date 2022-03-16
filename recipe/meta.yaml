@@ -19,15 +19,16 @@ requirements:
     - {{ compiler('c') }}
   host:
     - pip
+    - setuptools
     - python
     - pyasn1
     - pyasn1-modules
-    - openldap
+    - openldap >=2.4.11
   run:
     - python
     - pyasn1
     - pyasn1-modules
-    - openldap
+    - openldap >=2.4.11
 
 test:
   imports:
