@@ -13,7 +13,6 @@ build:
   number: 1
   skip: true  # [win]
   script:
-    - ln -s $PREFIX/lib/libldap.so $PREFIX/lib/libldap_r.so   # [unix]
     - '{{ PYTHON }} -m pip install . --no-deps --ignore-installed -vvv '
 
 requirements:
