@@ -10,7 +10,7 @@ source:
   sha256: 60464c8fc25e71e0fd40449a24eae482dcd0fb7fcf823e7de627a6525b3e0d12
 
 build:
-  number: 0
+  number: 1
   skip: true  # [win]
   script: '{{ PYTHON }} -m pip install . --no-deps --ignore-installed -vvv '
 
@@ -35,7 +35,6 @@ test:
     - ldap.controls
     - ldap.extop
     - ldap.schema
-    # - slapdtest
 
 about:
   home: https://www.python-ldap.org/
