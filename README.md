@@ -1,11 +1,11 @@
-About python-ldap
-=================
+About python-ldap-feedstock
+===========================
+
+Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/python-ldap-feedstock/blob/main/LICENSE.txt)
 
 Home: https://www.python-ldap.org/
 
 Package license: Python Software Foundation
-
-Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/python-ldap-feedstock/blob/main/LICENSE.txt)
 
 Summary: Python modules for implementing LDAP clients
 
