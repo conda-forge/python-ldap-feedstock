@@ -25,12 +25,12 @@ requirements:
     - python
     - pyasn1
     - pyasn1-modules
-    - openldap >=2.4.11,<2.5
+    - openldap >=2.4.11
   run:
     - python
     - pyasn1
     - pyasn1-modules
-    - openldap >=2.4.11,<2.5
+    - openldap >=2.4.11
 
 test:
   imports:
