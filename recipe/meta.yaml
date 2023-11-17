@@ -1,5 +1,5 @@
 {% set name = "python-ldap" %}
-{% set version = "3.4.3" %}
+{% set version = "3.4.4" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: ab26c519a0ef2a443a2a10391fa3c5cb52d7871323399db949ebfaa9f25ee2a0
+  sha256: 7edb0accec4e037797705f3a05cbf36a9fde50d08c8f67f2aef99a2628fab828
 
 build:
   number: 0
