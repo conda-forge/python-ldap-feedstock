@@ -45,7 +45,7 @@ about:
   license: PSF-2.0 and MIT
   license_file:
     - LICENCE
-    - LICENSE.MIT
+    - LICENCE.MIT
   summary: Python modules for implementing LDAP clients
   doc_url: https://www.python-ldap.org/en/latest/
   dev_url: https://github.com/python-ldap/python-ldap
