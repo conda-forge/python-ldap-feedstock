@@ -5,7 +5,7 @@ Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/python-ldap-fee
 
 Home: https://www.python-ldap.org/
 
-Package license: Python Software Foundation
+Package license: PSF-2.0 and MIT
 
 Summary: Python modules for implementing LDAP clients
 
