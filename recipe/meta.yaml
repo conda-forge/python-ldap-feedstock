@@ -10,9 +10,9 @@ source:
   sha256: ab26c519a0ef2a443a2a10391fa3c5cb52d7871323399db949ebfaa9f25ee2a0
 
 build:
-  number: 0
+  number: 1
   skip: true  # [win]
-  script: '{{ PYTHON }} -m pip install . --no-deps --ignore-installed -vvv '
+  script: {{ PYTHON }} -m pip install . --no-deps --ignore-installed -vvv
 
 requirements:
   build:
@@ -51,3 +51,4 @@ about:
 extra:
   recipe-maintainers:
     - mariusvniekerk
+    - xylar
