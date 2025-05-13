@@ -6,19 +6,20 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
   sha256: ab26c519a0ef2a443a2a10391fa3c5cb52d7871323399db949ebfaa9f25ee2a0
 
 build:
-  number: 0
+  number: 1
   skip: true  # [win]
-  script: '{{ PYTHON }} -m pip install . --no-deps --ignore-installed -vvv '
+  script: {{ PYTHON }} -m pip install . --no-deps --ignore-installed -vvv
 
 requirements:
   build:
     - python                                 # [build_platform != target_platform]
     - cross-python_{{ target_platform }}     # [build_platform != target_platform]
     - {{ compiler('c') }}
+    - {{ stdlib('c') }}
   host:
     - pip
     - setuptools
@@ -41,9 +42,10 @@ test:
 
 about:
   home: https://www.python-ldap.org/
-  license: Python Software Foundation
-  license_family: OTHER
-  license_file: LICENCE
+  license: PSF-2.0 and MIT
+  license_file:
+    - LICENCE
+    - LICENCE.MIT
   summary: Python modules for implementing LDAP clients
   doc_url: https://www.python-ldap.org/en/latest/
   dev_url: https://github.com/python-ldap/python-ldap
@@ -51,3 +53,4 @@ about:
 extra:
   recipe-maintainers:
     - mariusvniekerk
+    - xylar
