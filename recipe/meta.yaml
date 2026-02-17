@@ -1,16 +1,16 @@
 {% set name = "python-ldap" %}
-{% set version = "3.4.4" %}
+{% set version = "3.4.5" %}
 
 package:
   name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/python-ldap-{{ version }}.tar.gz
-  sha256: 7edb0accec4e037797705f3a05cbf36a9fde50d08c8f67f2aef99a2628fab828
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name | replace('-', '_') }}-{{ version }}.tar.gz
+  sha256: b2f6ef1c37fe2c6a5a85212efe71311ee21847766a7d45fcb711f3b270a5f79a
 
 build:
-  number: 1
+  number: 0
   skip: true  # [win]
   script: {{ PYTHON }} -m pip install . --no-deps --ignore-installed -vvv
 
@@ -31,7 +31,6 @@ requirements:
     - python
     - pyasn1 >=0.3.7
     - pyasn1-modules >=0.1.5
-    - openldap >=2.4.11
 
 test:
   imports:
