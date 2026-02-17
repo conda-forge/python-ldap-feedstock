@@ -44,6 +44,7 @@ tests:
         - ldap.controls
         - ldap.extop
         - ldap.schema
+      pip_check: true
 
 about:
   license: PSF-2.0 and MIT
