@@ -1,0 +1,61 @@
+schema_version: 1
+
+context:
+  name: python-ldap
+  version: 3.4.5
+
+package:
+  name: ${{ name|lower }}
+  version: ${{ version }}
+
+source:
+  url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/${{ name | replace('-', '_') }}-${{ version }}.tar.gz
+  sha256: b2f6ef1c37fe2c6a5a85212efe71311ee21847766a7d45fcb711f3b270a5f79a
+
+build:
+  number: 1
+  skip: win
+  script: ${{ PYTHON }} -m pip install . --no-deps --ignore-installed -vvv
+
+requirements:
+  build:
+    - if: build_platform != target_platform
+      then: python
+    - if: build_platform != target_platform
+      then: cross-python_${{ target_platform }}
+    - ${{ compiler('c') }}
+    - ${{ stdlib('c') }}
+  host:
+    - pip
+    - setuptools
+    - python
+    - pyasn1 >=0.3.7
+    - pyasn1-modules >=0.1.5
+    - openldap >=2.4.11
+  run:
+    - python
+    - pyasn1 >=0.3.7
+    - pyasn1-modules >=0.1.5
+
+tests:
+  - python:
+      imports:
+        - ldap
+        - ldap.controls
+        - ldap.extop
+        - ldap.schema
+
+about:
+  license: PSF-2.0 and MIT
+  license_file:
+    - LICENCE
+    - LICENCE.MIT
+  summary: Python modules for implementing LDAP clients
+  homepage: https://www.python-ldap.org/
+  repository: https://github.com/python-ldap/python-ldap
+  documentation: https://www.python-ldap.org/en/latest/
+
+extra:
+  recipe-maintainers:
+    - mariusvniekerk
+    - xylar
