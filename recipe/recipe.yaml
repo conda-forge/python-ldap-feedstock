@@ -26,11 +26,9 @@ requirements:
     - ${{ compiler('c') }}
     - ${{ stdlib('c') }}
   host:
-    - pip
-    - setuptools
     - python
-    - pyasn1 >=0.3.7
-    - pyasn1-modules >=0.1.5
+    - pip
+    - setuptools >=61
     - openldap >=2.4.11
   run:
     - python
