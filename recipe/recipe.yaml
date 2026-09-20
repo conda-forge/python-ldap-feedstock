@@ -2,7 +2,7 @@ schema_version: 1
 
 context:
   name: python-ldap
-  version: "3.4.7"
+  version: "3.4.8"
 
 package:
   name: ${{ name|lower }}
@@ -10,10 +10,10 @@ package:
 
 source:
   url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/${{ name | replace('-', '_') }}-${{ version }}.tar.gz
-  sha256: bacd9fb680d20263d8570ade1cf234d90d281149a8beb4f079dd8f33f7613dc8
+  sha256: 18dc7460470c6ff64ed5c04ee21c56dbfee7ab433a53213ba91e407eea44c34c
 
 build:
-  number: 1
+  number: 0
   skip: win
   script: ${{ PYTHON }} -m pip install . --no-deps --ignore-installed -vvv
 
@@ -26,11 +26,9 @@ requirements:
     - ${{ compiler('c') }}
     - ${{ stdlib('c') }}
   host:
-    - pip
-    - setuptools
     - python
-    - pyasn1 >=0.3.7
-    - pyasn1-modules >=0.1.5
+    - pip
+    - setuptools >=61
     - openldap >=2.4.11
   run:
     - python
